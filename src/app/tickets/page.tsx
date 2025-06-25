@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { initialTickets } from "@/data";
+import { ticketDetailsPath } from "@/paths";
 
 const Tickets = () => {
   return (
@@ -9,7 +10,10 @@ const Tickets = () => {
         {initialTickets.map((ticket) => (
           <div key={ticket.id} className="flex items-center gap-2">
             <h2 className="font-bold text-lg">{ticket.title}</h2>
-            <Link href={`/tickets/${ticket.id}`} className="text-sm underline">
+            <Link
+              href={ticketDetailsPath(ticket.id)}
+              className="text-sm underline"
+            >
               View
             </Link>
           </div>

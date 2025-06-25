@@ -1,12 +1,12 @@
 export const initialTickets = [
   {
-    id: 1,
+    id: "1",
     title: "Ticket 1",
     description: "Description 1",
     status: "DONE",
   },
   {
-    id: 2,
+    id: "2",
     title: "Ticket 2",
     description: "Description 2",
     status: "OPEN",
