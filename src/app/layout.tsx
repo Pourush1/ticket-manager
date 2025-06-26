@@ -16,12 +16,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <h1 className="text-white text-2xl font-bold">Ticket Manager</h1>
+        <h1 className="text-white text-2xl font-bold py-4">Ticket Manager</h1>
         <nav className="flex items-center gap-4">
-          <Link href={homePath}>Home</Link>
-          <Link href={ticketsPath}>Tickets</Link>
+          <div>
+            <Link href={homePath}>Home</Link>
+          </div>
+          <div>
+            <Link href={ticketsPath}>Tickets</Link>
+          </div>
         </nav>
-        <main className="min-h-screen flex-1  overflow-y-auto overflow-x-hidden py-24 px-8 bg-secondary/20 flex flex-col">
+        <main className="min-h-screen flex-1 overflow-y-auto overflow-x-hidden py-10 px-8 bg-secondary/20 flex flex-col">
           {children}
         </main>
       </body>
