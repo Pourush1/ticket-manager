@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 
 const CheckIcon = () => (
   <svg
@@ -75,12 +76,13 @@ const Tickets = () => {
           All your tickets are listed here
         </p>
       </div>
+      <Separator />
       <div className="flex flex-col flex-1 items-center gap-y-4 animate-fade-from-top">
         {initialTickets.map((ticket) => (
           <Card key={ticket.id} className="w-full max-w-[420px]">
             <CardHeader>
               <CardTitle className="flex gap-x-2">
-                {/* <span>{TICKET_ICONS[ticket.status]}</span> */}
+                <span>{TICKET_ICONS[ticket.status]}</span>
                 <span className="truncate">{ticket.title}</span>
               </CardTitle>
             </CardHeader>
