@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { initialTickets } from '@/data';
-import { ticketDetailsPath } from '@/paths';
+import { ticketPath } from '@/paths';
 
 const TICKET_ICONS = {
   OPEN: <LucideFileText />,
@@ -42,10 +42,7 @@ const Tickets = () => {
               </span>
             </CardContent>
             <CardFooter>
-              <Link
-                href={ticketDetailsPath(ticket.id)}
-                className="text-sm underline"
-              >
+              <Link href={ticketPath(ticket.id)} className="text-sm underline">
                 View
               </Link>
             </CardFooter>

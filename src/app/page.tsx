@@ -11,7 +11,7 @@ const Home = () => {
         </p>
       </div>
       <div className="flex flex-col items-center flex-1">
-        <Link href={ticketsPath} className="text-sm underline">
+        <Link href={ticketsPath()} className="text-sm underline">
           Go To Tickets Page
         </Link>
       </div>
