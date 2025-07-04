@@ -1,15 +1,38 @@
-import Link from "next/link";
-import { initialTickets } from "@/data";
-import { ticketDetailsPath } from "@/paths";
+import Link from 'next/link';
+import { initialTickets } from '@/data';
+import { ticketDetailsPath } from '@/paths';
+import clsx from 'clsx';
+
+const TICKET_ICONS = {
+  OPEN: 'O',
+  DONE: 'X',
+  IN_PROGRESS: '?',
+};
 
 const Tickets = () => {
   return (
-    <div>
-      <h1 className="text-2xl font-bold">Tickets Page</h1>
-      <ul>
+    <div className="flex flex-col flex-1 gap-y-8">
+      <div>
+        <h2 className="text-3xl font-bold tracking-tight">Tickets</h2>
+        <p className="text-sm text-muted-foreground">
+          All your tickets are listed here
+        </p>
+      </div>
+      <div className="flex flex-col flex-1 items-center gap-y-4">
         {initialTickets.map((ticket) => (
-          <div key={ticket.id} className="flex items-center gap-2">
-            <h2 className="font-bold text-lg">{ticket.title}</h2>
+          <div
+            key={ticket.id}
+            className="w-full max-w-[420px] p-4 border border-slate-100 rounded"
+          >
+            <div>{TICKET_ICONS[ticket.status]}</div>
+            <h3 className="text-lg font-semibold truncate">{ticket.title}</h3>
+            <p
+              className={clsx('text-sm text-slate-500 truncate', {
+                'line-through': ticket.status === 'DONE',
+              })}
+            >
+              {ticket.description}
+            </p>
             <Link
               href={ticketDetailsPath(ticket.id)}
               className="text-sm underline"
@@ -18,7 +41,7 @@ const Tickets = () => {
             </Link>
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
