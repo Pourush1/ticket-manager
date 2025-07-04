@@ -1,11 +1,12 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import Link from "next/link";
-import { homePath, ticketsPath } from "@/paths";
+import './globals.css';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { homePath, ticketsPath } from '@/paths';
+import { buttonVariants } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: "Ticket Manager",
-  description: "Manage your tickets",
+  title: 'Ticket Manager',
+  description: 'Manage your tickets',
 };
 
 export default function RootLayout({
@@ -19,10 +20,20 @@ export default function RootLayout({
         <h1 className="text-white text-2xl font-bold py-4">Ticket Manager</h1>
         <nav className="flex items-center gap-4">
           <div>
-            <Link href={homePath}>Home</Link>
+            <Link
+              href={homePath}
+              className={buttonVariants({ variant: 'outline' })}
+            >
+              Home
+            </Link>
           </div>
           <div>
-            <Link href={ticketsPath}>Tickets</Link>
+            <Link
+              href={ticketsPath}
+              className={buttonVariants({ variant: 'outline' })}
+            >
+              Tickets
+            </Link>
           </div>
         </nav>
         <main className="min-h-screen flex-1 overflow-y-auto overflow-x-hidden py-10 px-8 bg-secondary/20 flex flex-col">
