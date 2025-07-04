@@ -1,7 +1,7 @@
+import clsx from 'clsx';
 import Link from 'next/link';
 import { initialTickets } from '@/data';
 import { ticketDetailsPath } from '@/paths';
-import clsx from 'clsx';
 
 const TICKET_ICONS = {
   OPEN: 'O',
