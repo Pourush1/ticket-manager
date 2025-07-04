@@ -1,8 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { homePath, ticketsPath } from '@/paths';
 import { buttonVariants } from '@/components/ui/button';
+import { homePath, ticketsPath } from '@/paths';
 
 export const metadata: Metadata = {
   title: 'Ticket Manager',
