@@ -1,7 +1,7 @@
-import { Heading } from '@/components/heading';
 import { Suspense } from 'react';
-import { TicketList } from '@/features/ticket/components/ticket-list';
+import { Heading } from '@/components/heading';
 import { Spinner } from '@/components/spinner';
+import { TicketList } from '@/features/ticket/components/ticket-list';
 
 const Tickets = async () => {
   return (
