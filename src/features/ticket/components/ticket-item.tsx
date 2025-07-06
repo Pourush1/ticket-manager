@@ -7,8 +7,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ticketPath } from '@/paths';
-import { TICKET_ICONS } from '../constants';
 import { deleteTicket } from '../actions/delete-ticket';
+import { TICKET_ICONS } from '../constants';
 
 type TicketItemProps = {
   ticket: Ticket;
@@ -16,10 +16,6 @@ type TicketItemProps = {
 };
 
 const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
-  const handleDeleteTicket = async () => {
-    await deleteTicket(ticket.id);
-  };
-
   const detailButton = (
     <Button variant="outline" size="icon" asChild>
       <Link href={ticketPath(ticket.id)}>
@@ -29,9 +25,11 @@ const TicketItem = ({ ticket, isDetail }: TicketItemProps) => {
   );
 
   const deleteButton = (
-    <Button variant="outline" size="icon" onClick={handleDeleteTicket}>
-      <LucideTrash className="h-4 w-4" />
-    </Button>
+    <form action={deleteTicket.bind(null, ticket.id)}>
+      <Button variant="outline" size="icon">
+        <LucideTrash className="h-4 w-4" />
+      </Button>
+    </form>
   );
 
   return (
